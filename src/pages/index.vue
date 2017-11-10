@@ -57,6 +57,11 @@ export default {
     }, (err) => {
       console.log(err)
     })
+    this.$http.get('mock/tree.json').then(function (data) {
+      console.log(data)
+    },function (err) {
+      console.log(err)
+    })
   },
   data () {
     return {
