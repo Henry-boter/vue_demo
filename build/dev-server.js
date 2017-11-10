@@ -55,7 +55,7 @@ app.use(hotMiddleware)
 // serve pure static assets
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
-
+// express启动数据服务
 var apiServer = express()
 var bodyParser = require('body-parser')
 apiServer.use(bodyParser.urlencoded({ extended: true }))
@@ -96,5 +96,6 @@ module.exports = app.listen(port, function (err) {
   console.log('Listening at ' + uri + '\n')
   opn(uri)
 })
+
 // 模拟数据
 app.use('/mock', express.static('mock'))
