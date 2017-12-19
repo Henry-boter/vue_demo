@@ -1,14 +1,13 @@
 <template>
     <div class="chooser-component">
-        <ul class="chooser-list">
-          <li
-          v-for="(item, index) in selections"
-          @click="toggleSelection(index)"
-          :title="item.label"
-          :class="{active: checkActive(index)}"
-          >{{ item.label }}</li>
-        </ul>
-      </div>
+      <ul class="chooser-list">
+        <li
+        v-for="(item, index) in selections"
+        @click="toggleSelection(index)"
+        :title="item.label"
+        :class="{active: checkActive(index)}"
+        >{{ item.label }}</li>
+      </ul>
     </div>
 </template>
 
@@ -32,7 +31,7 @@ export default {
   methods: {
     toggleSelection (index) {
       if (this.nowIndexes.indexOf(index) === -1) {
-        this.nowIndexes.push(index)  
+        this.nowIndexes.push(index)
       }
       else {
         this.nowIndexes = _.remove(this.nowIndexes, (idx) => {
